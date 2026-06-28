@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="app.title">ModHub</title>
+  <meta name="description" content="Search and download modded games and apps from multiple sources" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="app" class="app-container">
+    <header class="header" id="main-header">
+      <nav class="nav container" aria-label="Main">
+        <a href="#/" class="logo" id="logo-link">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="logo-text" data-i18n="app.name">ModHub</span>
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="#/" class="nav-link active" data-i18n="nav.home">Home</a>
+          <a href="#/search" class="nav-link" data-i18n="nav.search">Search</a>
+          <a href="#/trending" class="nav-link" data-i18n="nav.trending">Trending</a>
+        </div>
+        <div class="nav-actions">
+          <form class="search-form header-search" id="header-search-form" role="search">
+            <input type="search" id="header-search-input" class="search-input" placeholder="Search games..." autocomplete="off" />
+            <button type="submit" class="search-btn" aria-label="Search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </form>
+          <div class="lang-toggle" id="lang-toggle">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">عربي</button>
+          </div>
+          <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main" id="main-content">
+      <div class="hero" id="hero-section">
+        <div class="container hero-content">
+          <h1 class="hero-title" data-i18n="hero.title">Find Any Mod APK</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Search across 11+ sources. One click download.</p>
+          <form class="hero-search" id="hero-search-form" role="search">
+            <input type="search" id="hero-search-input" class="hero-search-input" placeholder="Search games & apps..." autocomplete="off" />
+            <button type="submit" class="hero-search-btn" data-i18n="search.btn">Search</button>
+          </form>
+          <div class="hero-tags" id="hero-tags">
+            <span class="hero-tag-label" data-i18n="hero.trending">Trending:</span>
+            <a href="#/search?q=Brawl+Stars" class="tag">Brawl Stars</a>
+            <a href="#/search?q=Clash+Royale" class="tag">Clash Royale</a>
+            <a href="#/search?q=GTA+5" class="tag">GTA 5</a>
+            <a href="#/search?q=Minecraft" class="tag">Minecraft</a>
+            <a href="#/search?q=Free+Fire" class="tag">Free Fire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-area" id="content-area" style="display:none;">
+        <div class="container" id="dynamic-content"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-info">
+          <p data-i18n="footer.disclaimer">ModHub aggregates content from third-party sources. We do not host any APK files.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#/privacy" data-i18n="footer.privacy">Privacy</a>
+          <a href="#/terms" data-i18n="footer.terms">Terms</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
